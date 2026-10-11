@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hostelRules SYSTEM "hostelRules.dtd">
+<hostelRules code="AURA-2026" campus="Main Campus">
+    
+    <curfewPolicy>
+        <inTime>21:30</inTime>
+        <outTime>06:00</outTime>
+        <lateEntryPermitRequired>true</lateEntryPermitRequired>
+        <emergencyContact>+91-98765-00000</emergencyContact>
+        <finePerLateHour>100</finePerLateHour>
+    </curfewPolicy>
+
+    <roomClassifications>
+        <category type="Single">
+            <capacity>1</capacity>
+            <monthlyFee>8000</monthlyFee>
+            <amenities>Air Conditioning, Attached Bathroom, Study Desk, High-Speed Wi-Fi</amenities>
+        </category>
+        <category type="Double">
+            <capacity>2</capacity>
+            <monthlyFee>6000</monthlyFee>
+            <amenities>Ceiling Fan, Shared Bathroom, Twin Desks, High-Speed Wi-Fi</amenities>
+        </category>
+        <category type="Triple">
+            <capacity>3</capacity>
+            <monthlyFee>4500</monthlyFee>
+            <amenities>Ceiling Fan, Shared Bathroom, Triple Desks, Standard Wi-Fi</amenities>
+        </category>
+        <category type="Suite">
+            <capacity>2</capacity>
+            <monthlyFee>10000</monthlyFee>
+            <amenities>Mini Fridge, AC, Balcony, Private Washroom, Premium Wi-Fi</amenities>
+        </category>
+    </roomClassifications>
+
+    <messSchedule>
+        <mealTiming meal="Breakfast">07:30 - 09:30</mealTiming>
+        <mealTiming meal="Lunch">12:30 - 14:30</mealTiming>
+        <mealTiming meal="Snacks">17:00 - 18:00</mealTiming>
+        <mealTiming meal="Dinner">19:30 - 21:30</mealTiming>
+
+        <weeklyMenu>
+            <day name="Monday">
+                <breakfast>Idli Sambar, Chutney, Coffee/Tea</breakfast>
+                <lunch>Rajma Chawal, Chapati, Salad, Curd</lunch>
+                <dinner>Aloo Gobi, Dal Tadka, Rice, Chapati, Kheer</dinner>
+            </day>
+            <day name="Tuesday">
+                <breakfast>Poha, Jalebi, Sprouts, Milk/Tea</breakfast>
+                <lunch>Kadhi Pakoda, Steamed Rice, Roti</lunch>
+                <dinner>Paneer Butter Masala, Butter Roti, Dal Makhani</dinner>
+            </day>
+            <day name="Wednesday">
+                <breakfast>Aloo Paratha, Curd, Pickle, Tea</breakfast>
+                <lunch>Mix Veg, Paneer Curry, Rice, Roti</lunch>
+                <dinner>Egg Curry / Malai Kofta, Jeera Rice, Gulab Jamun</dinner>
+            </day>
+            <day name="Thursday">
+                <breakfast>Upma, Coconut Chutney, Fruit, Tea</breakfast>
+                <lunch>Chole Puri, Masala Chaas, Salad</lunch>
+                <dinner>Veg Kolhapuri, Dal Fry, Steamed Rice, Roti</dinner>
+            </day>
+            <day name="Friday">
+                <breakfast>Uttapam, Sambar, Coffee/Tea</breakfast>
+                <lunch>Veg Biryani, Raita, Boondi</lunch>
+                <dinner>Chicken Curry / Shahi Paneer, Naan, Rice, Ice Cream</dinner>
+            </day>
+            <day name="Saturday">
+                <breakfast>Masala Dosa, Chutney, Milk/Tea</breakfast>
+                <lunch>Dal Palak, Jeera Aloo, Rice, Roti</lunch>
+                <dinner>Pav Bhaji, Pulao, Custard</dinner>
+            </day>
+            <day name="Sunday">
+                <breakfast>Chana Bhatura, Fruit Juice, Tea</breakfast>
+                <lunch>Special Veg Thali / Chicken Biryani</lunch>
+                <dinner>Fried Rice, Veg Manchurian, Brownie</dinner>
+            </day>
+        </weeklyMenu>
+    </messSchedule>
+
+</hostelRules>

@@ -1,0 +1,34 @@
+<!ELEMENT hostelRules (curfewPolicy, roomClassifications, messSchedule)>
+<!ATTLIST hostelRules
+          code CDATA #REQUIRED
+          campus CDATA #REQUIRED>
+
+<!ELEMENT curfewPolicy (inTime, outTime, lateEntryPermitRequired, emergencyContact, finePerLateHour)>
+<!ELEMENT inTime (#PCDATA)>
+<!ELEMENT outTime (#PCDATA)>
+<!ELEMENT lateEntryPermitRequired (#PCDATA)>
+<!ELEMENT emergencyContact (#PCDATA)>
+<!ELEMENT finePerLateHour (#PCDATA)>
+
+<!ELEMENT roomClassifications (category+)>
+<!ELEMENT category (capacity, monthlyFee, amenities)>
+<!ATTLIST category
+          type (Single|Double|Triple|Suite) #REQUIRED>
+
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT monthlyFee (#PCDATA)>
+<!ELEMENT amenities (#PCDATA)>
+
+<!ELEMENT messSchedule (mealTiming+, weeklyMenu)>
+<!ELEMENT mealTiming (#PCDATA)>
+<!ATTLIST mealTiming
+          meal (Breakfast|Lunch|Snacks|Dinner) #REQUIRED>
+
+<!ELEMENT weeklyMenu (day+)>
+<!ELEMENT day (breakfast, lunch, dinner)>
+<!ATTLIST day
+          name CDATA #REQUIRED>
+
+<!ELEMENT breakfast (#PCDATA)>
+<!ELEMENT lunch (#PCDATA)>
+<!ELEMENT dinner (#PCDATA)>

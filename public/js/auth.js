@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const res = await window.API.post('/api/auth/login', { email, password });
       if (res.success) {
-        window.location.href = '/';
+        window.location.href = window.location.pathname.includes('login') ? window.location.pathname.replace(/login(\.html)?$/, 'index.html') : './';
       } else {
         const alertBox = document.getElementById('loginAlertContainer');
         if (alertBox) {

@@ -4,7 +4,7 @@
 > Synthesizing all **10 Engineering Laboratory Experiments** into one cohesive, runnable production-ready web application.
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/lavanyamahesh675-collab/aura-hostel)
-[![Live Demo](https://img.shields.io/badge/Live_Public_Demo-Active-success?logo=googlechrome)](https://aurahostel-erp.loca.lt)
+[![24/7 Permanent Live URL](https://img.shields.io/badge/24%2F7_Permanent_Link-Active_Global_CDN-success?logo=githubpages)](https://lavanyamahesh675-collab.github.io/aura-hostel/)
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-green?logo=node.js)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -12,12 +12,12 @@
 
 ### 🌐 Live Application Links
 
+* **🌍 24/7 Permanent Deployed Link (Always Online / Zero Downtime):**  
+  👉 **[https://lavanyamahesh675-collab.github.io/aura-hostel/](https://lavanyamahesh675-collab.github.io/aura-hostel/)**  
+  *(Permanent Standalone Login Portal: [https://lavanyamahesh675-collab.github.io/aura-hostel/login.html](https://lavanyamahesh675-collab.github.io/aura-hostel/login.html))*
+
 * **Official GitHub Repository:**  
   👉 **[https://github.com/lavanyamahesh675-collab/aura-hostel](https://github.com/lavanyamahesh675-collab/aura-hostel)**
-
-* **Live Public URL (Accessible Anywhere / Mobile):**  
-  👉 **[https://aurahostel-erp.loca.lt](https://aurahostel-erp.loca.lt)**  
-  *(Tunnel Verification Password / IP: **`43.252.204.161`**)*
 
 * **Local Running Instance:**  
   👉 **[http://localhost:3000](http://localhost:3000)**  
