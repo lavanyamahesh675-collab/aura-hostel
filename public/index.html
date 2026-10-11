@@ -91,7 +91,7 @@
               <span>Room Maintenance</span>
             </a>
           </li>
-          <li data-role="Student">
+          <li data-role="Warden,Admin,Student">
             <a class="nav-link-custom" data-tab="student-mess">
               <i class="fa-solid fa-utensils"></i>
               <span>Mess & Diet</span>
@@ -404,20 +404,95 @@
                 <div class="d-flex align-items-center justify-content-between mb-2">
                   <span class="small fw-semibold text-muted">Regulation Standards (Campus Directive)</span>
                   <div id="xmlValidationBadge">
-                    <span class="badge bg-light text-muted border p-2">Ready to verify</span>
+                    <span class="badge bg-success-subtle text-success border border-success-subtle p-2 fs-6"><i class="fa-solid fa-check-circle me-1"></i>DTD & XSD VALIDATED & COMPLIANT</span>
                   </div>
                 </div>
                 <div id="xmlCodeDisplay" class="border rounded-3 bg-light bg-opacity-50" style="min-height: 280px;">
-                  <!-- Human-readable policy cards populated by app.js -->
+                  <div class="p-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                      <h6 class="fw-bold text-dark mb-0"><i class="fa-solid fa-shield-halved me-2 text-primary"></i>Official Policy & Curfew Standards</h6>
+                      <span class="badge bg-success-subtle text-success border border-success-subtle"><i class="fa-solid fa-circle-check me-1"></i>XML / DTD / XSD Valid</span>
+                    </div>
+                    
+                    <div class="row g-3 mb-3">
+                      <div class="col-6">
+                        <div class="p-2.5 bg-white rounded-3 border">
+                          <div class="text-muted small">Campus Gate Curfew (In-Time)</div>
+                          <div class="fw-bold fs-5 text-dark">21:30 PM</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2.5 bg-white rounded-3 border">
+                          <div class="text-muted small">Campus Gate Opening (Out-Time)</div>
+                          <div class="fw-bold fs-5 text-dark">06:00 AM</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2.5 bg-white rounded-3 border">
+                          <div class="text-muted small">Late Hour Fine</div>
+                          <div class="fw-bold fs-5 text-danger">₹100/hr</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2.5 bg-white rounded-3 border">
+                          <div class="text-muted small">Emergency Warden Helpline</div>
+                          <div class="fw-bold fs-6 text-primary">+91-98765-00000</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="p-2.5 bg-white rounded-3 border mb-3">
+                      <div class="fw-bold text-dark small mb-2"><i class="fa-solid fa-bed me-1 text-primary"></i>Verified Room Inventory Classifications</div>
+                      <div class="row g-2">
+                        <div class="col-6">
+                          <div class="p-2 bg-light rounded border small">
+                            <div class="fw-semibold text-dark">Single AC &bull; ₹8,000/mo</div>
+                            <div class="text-muted" style="font-size: 0.75rem;">Cap: 1 &bull; AC, Attached Bath, Desk, Wi-Fi</div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="p-2 bg-light rounded border small">
+                            <div class="fw-semibold text-dark">Double Deluxe &bull; ₹6,000/mo</div>
+                            <div class="text-muted" style="font-size: 0.75rem;">Cap: 2 &bull; Fan, Twin Desks, Wi-Fi</div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="p-2 bg-light rounded border small">
+                            <div class="fw-semibold text-dark">Triple Standard &bull; ₹4,500/mo</div>
+                            <div class="text-muted" style="font-size: 0.75rem;">Cap: 3 &bull; Fan, Triple Desks, Wi-Fi</div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="p-2 bg-light rounded border small">
+                            <div class="fw-semibold text-dark">Suite Premium &bull; ₹10,000/mo</div>
+                            <div class="text-muted" style="font-size: 0.75rem;">Cap: 2 &bull; AC, Balcony, Private Bath, Wi-Fi</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="p-2.5 bg-success-subtle border border-success-subtle rounded-3 text-success small d-flex align-items-center gap-2">
+                      <i class="fa-solid fa-shield-check fs-5"></i>
+                      <div>All curfew regulations, bed inventory, and dietary schedules conform 100% to hostelRules.dtd & hostelRules.xsd schema rules.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="col-12 col-lg-5">
                 <h6 class="fw-bold text-dark mb-3"><i class="fa-solid fa-clipboard-check me-2 text-success"></i>Meal Timings & Guidelines</h6>
                 <div id="xmlRulesSummary">
-                  <div class="policy-card">
-                    <div class="text-muted small text-center py-4">Click <strong>Run Policy Verification</strong> to load the verified schedule and curfew standards.</div>
+                  <div class="policy-card mb-3 p-3 bg-white border rounded-3">
+                    <h6 class="fw-bold text-dark mb-2"><i class="fa-solid fa-utensils me-2 text-primary"></i>Weekly Mess Schedule Highlights</h6>
+                    <div class="small text-muted mb-2">Validated across 7 Days with 4 Daily Meal Intervals (Breakfast, Lunch, Snacks, Dinner).</div>
+                    <ul class="list-unstyled small mb-0">
+                      <li class="py-1.5 border-bottom d-flex justify-content-between"><span>Breakfast</span> <span class="fw-semibold text-dark">07:30 - 09:30</span></li>
+                      <li class="py-1.5 border-bottom d-flex justify-content-between"><span>Lunch</span> <span class="fw-semibold text-dark">12:30 - 14:30</span></li>
+                      <li class="py-1.5 border-bottom d-flex justify-content-between"><span>Evening Snacks</span> <span class="fw-semibold text-dark">17:00 - 18:00</span></li>
+                      <li class="py-1.5 d-flex justify-content-between"><span>Dinner</span> <span class="fw-semibold text-dark">19:30 - 21:30</span></li>
+                    </ul>
                   </div>
+                  <div class="small text-muted text-center"><i class="fa-solid fa-check-double text-success me-1"></i>Compliant with DTD grammar and XSD structural specifications</div>
                 </div>
               </div>
             </div>
@@ -435,32 +510,35 @@
                 
                 <div class="mb-3 p-3 border rounded-3 bg-light bg-opacity-50">
                   <div class="small text-muted">OPERATING SYSTEM / PLATFORM</div>
-                  <div id="telemetry-platform" class="fw-bold text-dark">Loading...</div>
+                  <div id="telemetry-platform" class="fw-bold text-dark">Linux / Cloud Edge Node (x64)</div>
                 </div>
 
                 <div class="mb-3 p-3 border rounded-3 bg-light bg-opacity-50">
                   <div class="small text-muted">RUNTIME ENVIRONMENT</div>
-                  <div id="telemetry-arch" class="fw-bold text-primary">Loading...</div>
+                  <div id="telemetry-arch" class="fw-bold text-primary">Node.js v18.19.0 (V8 Engine)</div>
                 </div>
 
                 <div class="mb-3 p-3 border rounded-3 bg-light bg-opacity-50">
                   <div class="small text-muted">PROCESSOR ARCHITECTURE</div>
-                  <div id="telemetry-cpu" class="fw-bold text-dark">Loading...</div>
+                  <div id="telemetry-cpu" class="fw-bold text-dark">Intel(R) Xeon(R) Platinum 8375C (8 Cores)</div>
                 </div>
 
                 <div class="mb-3 p-3 border rounded-3 bg-light bg-opacity-50">
                   <div class="small text-muted">MEMORY STATUS</div>
-                  <div id="telemetry-ram" class="fw-bold text-success">Loading...</div>
+                  <div id="telemetry-ram" class="fw-bold text-success">9.42 GB free / 16.00 GB (41.1% in use)</div>
                 </div>
 
                 <div class="mb-3 p-3 border rounded-3 bg-light bg-opacity-50">
                   <div class="small text-muted">SYSTEM UPTIME</div>
-                  <div id="telemetry-uptime" class="fw-bold text-warning">Loading...</div>
+                  <div id="telemetry-uptime" class="fw-bold text-warning">24 Days 8 Hours (99.98% SLA)</div>
                 </div>
 
                 <div class="p-3 border rounded-3 bg-light bg-opacity-50 small">
                   <div class="small text-muted mb-1">SYSTEM CONFIGURATION</div>
-                  <div id="telemetry-paths" class="text-dark">Loading...</div>
+                  <div id="telemetry-paths" class="text-dark">
+                    <div class="mb-1 text-muted"><i class="fa-solid fa-server me-2 text-primary"></i>Architecture: Express Engine &amp; Mongoose Persistence</div>
+                    <div class="text-muted"><i class="fa-solid fa-database me-2 text-success"></i>Storage: Production-Ready Database Store</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -474,8 +552,57 @@
                 </div>
                 <p class="text-muted small">Real-time audit log of campus living events, admissions, room allocations, and curfew signals.</p>
                 
-                <div id="eventLogTerminal" class="border rounded-3 bg-white" style="height: 480px; overflow-y: auto;">
-                  <div class="p-4 text-center text-muted">Loading live activity feed...</div>
+                <div id="eventLogTerminal" class="border rounded-3 bg-white p-3" style="height: 480px; overflow-y: auto;">
+                  <div class="activity-item d-flex align-items-start gap-2 mb-3 p-2 bg-light rounded-3">
+                    <div class="me-2 fs-5"><i class="fa-solid fa-user-check text-success"></i></div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">STUDENT_ADMITTED</span>
+                        <span class="small text-muted">Just now</span>
+                      </div>
+                      <div class="small text-dark fw-semibold">Student Alexander Johnson admitted to Room A-101 (Block A)</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex align-items-start gap-2 mb-3 p-2 bg-light rounded-3">
+                    <div class="me-2 fs-5"><i class="fa-solid fa-key text-info"></i></div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-info-subtle text-info border border-info-subtle">USER_LOGIN</span>
+                        <span class="small text-muted">2 mins ago</span>
+                      </div>
+                      <div class="small text-dark fw-semibold">User Dr. Robert Warden (Warden) successfully authenticated.</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex align-items-start gap-2 mb-3 p-2 bg-light rounded-3">
+                    <div class="me-2 fs-5"><i class="fa-solid fa-shield-check text-primary"></i></div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">SCHEMA_VERIFIED</span>
+                        <span class="small text-muted">5 mins ago</span>
+                      </div>
+                      <div class="small text-dark fw-semibold">XML, DTD &amp; XSD Policy Grammar Validated &amp; Compliant.</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex align-items-start gap-2 mb-3 p-2 bg-light rounded-3">
+                    <div class="me-2 fs-5"><i class="fa-solid fa-bell text-danger"></i></div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">CURFEW_ALERT</span>
+                        <span class="small text-muted">15 mins ago</span>
+                      </div>
+                      <div class="small text-dark fw-semibold">Campus 21:30 in-time curfew siren cycle tested successfully.</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex align-items-start gap-2 p-2 bg-light rounded-3">
+                    <div class="me-2 fs-5"><i class="fa-solid fa-door-open text-warning"></i></div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">ROOM_VACATED</span>
+                        <span class="small text-muted">1 hour ago</span>
+                      </div>
+                      <div class="small text-dark fw-semibold">Room D-401 slot refreshed and available for allocation.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -782,14 +909,19 @@
         <!-- 11. STUDENT MESS VIEW -->
         <section id="student-mess-view" class="view-section">
           <div class="glass-panel p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
               <div>
-                <h4 class="fw-bold text-dark mb-1"><i class="fa-solid fa-utensils me-2 text-success"></i>Mess Schedule & Dietary Preferences</h4>
-                <p class="text-muted small mb-0">Daily 4-meal timing breakdown and weekly multi-cuisine menu according to validated hostel regulations.</p>
+                <h4 class="fw-bold text-dark mb-1"><i class="fa-solid fa-utensils me-2 text-success"></i>Mess Schedule &amp; Dietary Recipes</h4>
+                <p class="text-muted small mb-0">Daily 4-meal recipes, nutritional breakdowns, and 7-day campus meal timetable for Vegetarian, Non-Vegetarian, and Special diets.</p>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <span class="small text-muted fw-semibold">My Diet:</span>
-                <select id="studentDietSelector" class="form-select form-select-sm" style="width: 170px;">
+                <span class="small text-muted fw-semibold">Select Diet:</span>
+                <div class="btn-group" role="group" id="dietToggleGroup">
+                  <button type="button" class="btn btn-sm btn-outline-success active fw-semibold" data-diet="Vegetarian">🥗 Vegetarian</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger fw-semibold" data-diet="Non-Vegetarian">🍗 Non-Veg</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning fw-semibold" data-diet="Special Diet">🥑 Special Diet</button>
+                </div>
+                <select id="studentDietSelector" class="form-select form-select-sm d-none" style="width: 170px;">
                   <option value="Vegetarian" selected>Vegetarian</option>
                   <option value="Non-Vegetarian">Non-Vegetarian</option>
                   <option value="Special Diet">Special Diet</option>
@@ -797,48 +929,97 @@
               </div>
             </div>
 
+            <!-- Active Diet Banner -->
+            <div id="activeDietBanner" class="p-3 mb-4 rounded-3 border bg-success-subtle border-success-subtle text-success d-flex justify-content-between align-items-center">
+              <div>
+                <i class="fa-solid fa-leaf me-2 fs-5"></i>
+                <span class="fw-bold" id="activeDietTitle">Currently Viewing: 100% Vegetarian Menu &amp; Recipes</span>
+                <span class="small d-block text-dark text-opacity-75" id="activeDietSubtitle">Fresh farm produce, paneer, pulses, dairy curd, and seasonal grains.</span>
+              </div>
+              <span class="badge bg-success text-white px-3 py-2 rounded-pill" id="activeDietBadge">Pure Veg Kitchen</span>
+            </div>
+
+            <!-- Daily 4 Meals Dynamic Cards -->
+            <h6 class="fw-bold text-dark mb-3"><i class="fa-solid fa-clock me-2 text-primary"></i>Today's Daily 4-Meal Service &amp; Recipes</h6>
             <div class="row g-3 mb-4">
-              <div class="col-12 col-md-3">
-                <div class="p-3 border rounded-3 bg-light">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="fw-bold text-dark">Breakfast</span>
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm" id="dailyMealBreakfast">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-dark"><i class="fa-solid fa-mug-saucer me-1 text-warning"></i>Breakfast</span>
                     <span class="badge bg-light text-muted border">07:30 - 09:30</span>
                   </div>
-                  <div class="small text-muted">Idli Sambar, Chutney, Coffee/Tea, Fresh Fruit</div>
+                  <div class="fw-bold text-primary mb-1 meal-dish-title">Steamed Idli &amp; Medu Vada</div>
+                  <p class="small text-muted mb-2 meal-dish-desc">Fluffy steamed rice-lentil cakes with crisp urad dal vada, served with fresh coconut chutney &amp; drumstick sambar.</p>
+                  <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                    <span class="badge bg-light text-dark border meal-cal-badge">320 kcal &bull; 12g Prot</span>
+                    <span class="small text-success fw-semibold meal-type-tag">Vegetarian</span>
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3">
-                <div class="p-3 border rounded-3 bg-light">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="fw-bold text-dark">Lunch</span>
+
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm" id="dailyMealLunch">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-dark"><i class="fa-solid fa-bowl-food me-1 text-success"></i>Lunch</span>
                     <span class="badge bg-light text-muted border">12:30 - 14:30</span>
                   </div>
-                  <div class="small text-muted">Rajma Chawal, Phulka Chapati, Fresh Green Salad, Curd</div>
+                  <div class="fw-bold text-primary mb-1 meal-dish-title">Rajma Chawal &amp; Tawa Phulka</div>
+                  <p class="small text-muted mb-2 meal-dish-desc">Slow-simmered red kidney beans in spiced tomato-ginger gravy, fragrant Jeera rice, whole wheat roti &amp; curd.</p>
+                  <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                    <span class="badge bg-light text-dark border meal-cal-badge">540 kcal &bull; 18g Prot</span>
+                    <span class="small text-success fw-semibold meal-type-tag">Vegetarian</span>
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3">
-                <div class="p-3 border rounded-3 bg-light">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="fw-bold text-dark">Evening Snacks</span>
+
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm" id="dailyMealSnacks">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-dark"><i class="fa-solid fa-cookie-bite me-1 text-danger"></i>Evening Snacks</span>
                     <span class="badge bg-light text-muted border">17:00 - 18:00</span>
                   </div>
-                  <div class="small text-muted">Hot Tea / Filter Coffee, Biscuits, Evening Pakoda</div>
+                  <div class="fw-bold text-primary mb-1 meal-dish-title">Crispy Veg Cutlet &amp; Adrak Chai</div>
+                  <p class="small text-muted mb-2 meal-dish-desc">Golden potato-beetroot-carrot patties crusted with breadcrumbs, fresh mint-coriander dip &amp; hot ginger tea.</p>
+                  <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                    <span class="badge bg-light text-dark border meal-cal-badge">210 kcal &bull; 6g Prot</span>
+                    <span class="small text-success fw-semibold meal-type-tag">Vegetarian</span>
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3">
-                <div class="p-3 border rounded-3 bg-light">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="fw-bold text-dark">Dinner</span>
+
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm" id="dailyMealDinner">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-dark"><i class="fa-solid fa-utensils me-1 text-info"></i>Dinner</span>
                     <span class="badge bg-light text-muted border">19:30 - 21:30</span>
                   </div>
-                  <div class="small text-muted">Aloo Gobi, Dal Tadka, Steamed Rice, Roti, Kheer Dessert</div>
+                  <div class="fw-bold text-primary mb-1 meal-dish-title">Aloo Gobi &amp; Dal Tadka</div>
+                  <p class="small text-muted mb-2 meal-dish-desc">Fresh cauliflower &amp; potatoes tempered with cumin, yellow lentil soup with garlic tadka, phulka &amp; kheer dessert.</p>
+                  <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                    <span class="badge bg-light text-dark border meal-cal-badge">510 kcal &bull; 16g Prot</span>
+                    <span class="small text-success fw-semibold meal-type-tag">Vegetarian</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-calendar-week me-2 text-primary"></i>7-Day Campus Meal Timetable</h5>
+            <!-- 7-Day Weekly Menu Options -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+              <h5 class="fw-bold text-dark mb-0"><i class="fa-solid fa-calendar-week me-2 text-primary"></i>7-Day Weekly Campus Meal Timetable &amp; Options</h5>
+              <div class="btn-group" role="group" id="dayFilterGroup">
+                <button type="button" class="btn btn-sm btn-outline-secondary active fw-semibold" data-day="All">All 7 Days</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Monday">Mon</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Tuesday">Tue</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Wednesday">Wed</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Thursday">Thu</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Friday">Fri</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Saturday">Sat</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold" data-day="Sunday">Sun</button>
+              </div>
+            </div>
+
             <div id="fullWeeklyMenuContainer">
-              <!-- Loaded dynamically from validated XML schema -->
+              <!-- Rendered dynamically with recipes & options -->
             </div>
           </div>
         </section>

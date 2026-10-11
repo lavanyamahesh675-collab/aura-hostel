@@ -54,9 +54,11 @@
   ];
 
   const seedEvents = [
-    { event: 'SYSTEM_BOOT', details: 'AuraHostel Enterprise High-Availability Cluster Online', timestamp: new Date(Date.now() - 3600000 * 12).toISOString() },
-    { event: 'SCHEMA_VERIFIED', details: 'DTD & XSD Policy Grammar Validated', timestamp: new Date(Date.now() - 3600000 * 6).toISOString() },
-    { event: 'ROLE_AUTH', details: 'Session active for Campus Operations', timestamp: new Date().toISOString() }
+    { id: 'LOG-101', type: 'STUDENT_ADMITTED', details: { name: 'Alexander Johnson', roomNo: 'A-101', block: 'Block A' }, timestamp: new Date(Date.now() - 3600000 * 2).toLocaleTimeString() },
+    { id: 'LOG-102', type: 'USER_LOGIN', details: { user: 'Dr. Robert Warden', role: 'Warden' }, timestamp: new Date(Date.now() - 3600000 * 4).toLocaleTimeString() },
+    { id: 'LOG-103', type: 'SCHEMA_VERIFIED', details: { details: 'XML, DTD & XSD Policy Verified Compliant' }, timestamp: new Date(Date.now() - 3600000 * 6).toLocaleTimeString() },
+    { id: 'LOG-104', type: 'CURFEW_ALERT', details: { details: 'Campus 21:30 in-time curfew siren cycle tested' }, timestamp: new Date(Date.now() - 3600000 * 8).toLocaleTimeString() },
+    { id: 'LOG-105', type: 'ROOM_VACATED', details: { name: 'Marcus Vance', roomNo: 'D-401' }, timestamp: new Date(Date.now() - 3600000 * 10).toLocaleTimeString() }
   ];
 
   function getStorage(key, defaultVal) {
@@ -259,32 +261,46 @@
 
       // 8. SYSTEM METRICS & TELEMETRY
       if (pathname === '/api/system/metrics' || pathname === '/api/system/health') {
-        const ramUsage = Math.floor(45 + Math.random() * 12);
+        const ramUsage = Math.floor(41 + Math.random() * 4);
         return this.respond({
+          success: true,
           status: 'UP',
           system: 'AuraHostel ERP Enterprise API',
-          uptime: 86400,
-          database: 'High-Availability Local Cluster',
-          memory: { free: `${100 - ramUsage}%`, usagePercent: ramUsage },
-          platform: 'Campus Cluster (24/7 Active)',
-          nodeVersion: 'v18.19.0',
-          cpuCount: 8,
-          timestamp: new Date().toISOString()
+          metrics: {
+            platform: 'Linux / Cloud Global Edge Node (24/7 Active)',
+            arch: 'x64',
+            osType: 'Linux Kernel 6.1 (Production)',
+            cpuModel: 'Intel(R) Xeon(R) Platinum 8375C @ 2.80GHz',
+            cpuCores: 8,
+            totalMemory: '16.00 GB',
+            freeMemory: '9.42 GB',
+            memoryUsagePercent: `${ramUsage}%`,
+            serverUptimeSeconds: 144000,
+            processUptimeSeconds: 28800,
+            nodeVersion: 'Node.js v18.19.0 (V8 Engine)',
+            pid: 1428,
+            timestamp: new Date().toISOString()
+          }
         });
       }
 
       // 9. EVENT LOGS
       if (pathname === '/api/system/event-logs') {
         const events = getStorage('events', seedEvents);
-        return this.respond({ success: true, data: events });
+        return this.respond({
+          success: true,
+          logsCount: events.length,
+          logs: events
+        });
       }
 
       if (pathname === '/api/system/trigger-event') {
         const events = getStorage('events', seedEvents);
         events.unshift({
-          event: body.event || 'CURFEW_ALERT',
-          details: body.details || 'Curfew Bell Sounded across Campus Blocks',
-          timestamp: new Date().toISOString()
+          id: 'LOG-' + Date.now(),
+          type: body.event || 'CURFEW_ALERT',
+          details: body.details || { details: 'Curfew Bell Sounded across Campus Blocks' },
+          timestamp: new Date().toLocaleTimeString()
         });
         setStorage('events', events);
         return this.respond({ success: true, message: 'Event broadcast completed' });
@@ -293,37 +309,41 @@
       // 10. XML SCHEMA VALIDATION
       if (pathname === '/api/system/validate-schema') {
         return this.respond({
+          success: true,
           valid: true,
           xmlValid: true,
           dtdValid: true,
           xsdValid: true,
+          status: 'DTD & XSD COMPLIANT',
           message: 'hostelRules.xml strictly validates against hostelRules.dtd and hostelRules.xsd schema grammar',
           summary: {
             curfewPolicy: {
               inTime: '21:30',
               outTime: '06:00',
-              fineAmount: 100,
-              emergencyContact: '+91-9876543210'
+              finePerLateHour: 100,
+              emergencyContact: '+91-98765-00000',
+              lateEntryPermitRequired: true
             },
             roomCategories: [
-              'Single Occupancy AC',
-              'Double Occupancy Deluxe',
-              'Triple Sharing Standard'
+              { type: 'Single', capacity: 1, monthlyFee: 8000, amenities: 'Air Conditioning, Attached Bathroom, Study Desk, High-Speed Wi-Fi' },
+              { type: 'Double', capacity: 2, monthlyFee: 6000, amenities: 'Ceiling Fan, Shared Bathroom, Twin Desks, High-Speed Wi-Fi' },
+              { type: 'Triple', capacity: 3, monthlyFee: 4500, amenities: 'Ceiling Fan, Shared Bathroom, Triple Desks, Standard Wi-Fi' },
+              { type: 'Suite', capacity: 2, monthlyFee: 10000, amenities: 'Mini Fridge, AC, Balcony, Private Washroom, Premium Wi-Fi' }
             ],
-            mealTimings: {
-              breakfast: '07:30 - 09:00',
-              lunch: '12:30 - 14:00',
-              snacks: '17:00 - 18:00',
-              dinner: '19:30 - 21:00'
-            },
+            mealTimings: [
+              { meal: 'Breakfast', timing: '07:30 - 09:30' },
+              { meal: 'Lunch', timing: '12:30 - 14:30' },
+              { meal: 'Snacks', timing: '17:00 - 18:00' },
+              { meal: 'Dinner', timing: '19:30 - 21:30' }
+            ],
             weeklyMenu: [
-              { day: 'Monday', breakfast: 'Idli, Sambar & Chutney', lunch: 'Rice, Dal Tadka, Paneer Butter Masala', dinner: 'Chapati, Mixed Veg, Kheer' },
-              { day: 'Tuesday', breakfast: 'Poha, Sprouts & Masala Tea', lunch: 'Jeera Rice, Rajma Curry, Curd', dinner: 'Poori, Aloo Curry, Gulab Jamun' },
-              { day: 'Wednesday', breakfast: 'Masala Dosa & Filter Coffee', lunch: 'Veg Biryani, Mirchi Ka Salan, Raita', dinner: 'Roti, Dal Makhani, Ice Cream' },
-              { day: 'Thursday', breakfast: 'Aloo Paratha & Fresh Curd', lunch: 'Rice, Sambar, Bhindi Fry, Papad', dinner: 'Naan, Paneer Tikka Masala, Fruit Salad' },
-              { day: 'Friday', breakfast: 'Upma, Vada & Coconut Chutney', lunch: 'Fried Rice, Veg Manchurian, Soup', dinner: 'Parotta, Kurma, Rasgulla' },
-              { day: 'Saturday', breakfast: 'Puri Bhaji & Sweet Lassi', lunch: 'Lemon Rice, Dal Palak, Curd Rice', dinner: 'Phulka, Chana Masala, Halwa' },
-              { day: 'Sunday', breakfast: 'Pancake / Mysore Bonda', lunch: 'Special Dum Biryani, Paneer Curry, Sweet', dinner: 'Light Khichdi, Kadhi, Custard' }
+              { day: 'Monday', breakfast: 'Idli Sambar, Chutney, Tea', lunch: 'Rajma Chawal, Chapati, Curd', snacks: 'Veg Cutlet, Mint Dip, Chai', dinner: 'Aloo Gobi, Dal Tadka, Kheer' },
+              { day: 'Tuesday', breakfast: 'Poha Sev, Sprouts, Jalebi', lunch: 'Kadhi Pakoda, Jeera Rice, Roti', snacks: 'Samosa, Tamarind Chutney, Tea', dinner: 'Paneer Butter Masala, Roti, Gulab Jamun' },
+              { day: 'Wednesday', breakfast: 'Aloo Paratha, Curd, Pickle', lunch: 'Mix Veg Korma, Steamed Rice, Dal', snacks: 'Mysore Bonda, Filter Coffee', dinner: 'Egg Curry / Malai Kofta, Jeera Rice' },
+              { day: 'Thursday', breakfast: 'Rava Upma, Coconut Chutney', lunch: 'Amritsari Chole, Puri, Chaas', snacks: 'Spring Rolls, Sweet Chilli Sauce', dinner: 'Veg Kolhapuri, Dal Fry, Custard' },
+              { day: 'Friday', breakfast: 'Uttapam, Sambar, Filter Coffee', lunch: 'Dum Biryani, Raita, Salan', snacks: 'Crispy Pakoda, Adrak Chai', dinner: 'Chicken Curry / Shahi Paneer, Naan, Ice Cream' },
+              { day: 'Saturday', breakfast: 'Masala Dosa, Red Chutney', lunch: 'Dal Palak, Jeera Aloo, Lassi', snacks: 'Pani Puri / Bhel Street Snacks', dinner: 'Pav Bhaji, Pulao, Caramel Custard' },
+              { day: 'Sunday', breakfast: 'Chana Bhatura, Fresh Juice', lunch: 'Sunday Royal Thali / Chicken Biryani', snacks: 'Bun Maska, Irani Chai', dinner: 'Fried Rice, Manchurian, Brownie' }
             ]
           }
         });
