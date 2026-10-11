@@ -4,7 +4,7 @@
 > Synthesizing all **10 Engineering Laboratory Experiments** into one cohesive, runnable production-ready web application.
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/lavanyamahesh675-collab/aura-hostel)
-[![Live Demo](https://img.shields.io/badge/Live_Public_Demo-Active-success?logo=googlechrome)](https://five-tigers-help.loca.lt)
+[![Live Demo](https://img.shields.io/badge/Live_Public_Demo-Active-success?logo=googlechrome)](https://aurahostel-erp.loca.lt)
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-green?logo=node.js)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -16,7 +16,7 @@
   👉 **[https://github.com/lavanyamahesh675-collab/aura-hostel](https://github.com/lavanyamahesh675-collab/aura-hostel)**
 
 * **Live Public URL (Accessible Anywhere / Mobile):**  
-  👉 **[https://five-tigers-help.loca.lt](https://five-tigers-help.loca.lt)**  
+  👉 **[https://aurahostel-erp.loca.lt](https://aurahostel-erp.loca.lt)**  
   *(Tunnel Verification Password / IP: **`43.252.204.161`**)*
 
 * **Local Running Instance:**  
