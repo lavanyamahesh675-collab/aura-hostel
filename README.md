@@ -180,7 +180,7 @@ node server.js
 
 ### Step 5: Access Application in Browser
 Open your browser and navigate to:
-👉 **[http://localhost:3000](http://localhost:3000)**
+👉 https://lavanyamahesh675-collab.github.io/aura-hostel/
 
 ---
 
