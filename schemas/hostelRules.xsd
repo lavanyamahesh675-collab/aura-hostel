@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Root Element -->
+    <xs:element name="hostelRules">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="curfewPolicy" type="curfewPolicyType"/>
+                <xs:element name="roomClassifications" type="roomClassificationsType"/>
+                <xs:element name="messSchedule" type="messScheduleType"/>
+            </xs:sequence>
+            <xs:attribute name="code" type="xs:string" use="required"/>
+            <xs:attribute name="campus" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Curfew Policy Type -->
+    <xs:complexType name="curfewPolicyType">
+        <xs:sequence>
+            <xs:element name="inTime" type="xs:string"/>
+            <xs:element name="outTime" type="xs:string"/>
+            <xs:element name="lateEntryPermitRequired" type="xs:boolean"/>
+            <xs:element name="emergencyContact" type="xs:string"/>
+            <xs:element name="finePerLateHour" type="xs:nonNegativeInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Room Classifications Type -->
+    <xs:complexType name="roomClassificationsType">
+        <xs:sequence>
+            <xs:element name="category" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="capacity" type="xs:positiveInteger"/>
+                        <xs:element name="monthlyFee" type="xs:positiveInteger"/>
+                        <xs:element name="amenities" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Single"/>
+                                <xs:enumeration value="Double"/>
+                                <xs:enumeration value="Triple"/>
+                                <xs:enumeration value="Suite"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Mess Schedule Type -->
+    <xs:complexType name="messScheduleType">
+        <xs:sequence>
+            <xs:element name="mealTiming" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="meal" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="weeklyMenu">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="day" maxOccurs="7">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="breakfast" type="xs:string"/>
+                                    <xs:element name="lunch" type="xs:string"/>
+                                    <xs:element name="dinner" type="xs:string"/>
+                                </xs:sequence>
+                                <xs:attribute name="name" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

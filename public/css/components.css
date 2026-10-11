@@ -1,0 +1,83 @@
+/* Component styles for Light Theme */
+
+.btn-cyan {
+  background: linear-gradient(135deg, #4f46e5, #0284c7);
+  color: white !important;
+  border: none;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-cyan:hover {
+  background: linear-gradient(135deg, #4338ca, #0369a1);
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+.btn-outline-cyan {
+  border: 1.5px solid #4f46e5;
+  color: #4f46e5 !important;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-cyan:hover {
+  background: #f5f3ff;
+  color: #4338ca !important;
+}
+
+.btn-outline-indigo {
+  border: 1.5px solid #4f46e5;
+  color: #4f46e5;
+  background: #f8fafc;
+}
+.btn-outline-indigo:hover {
+  background: #e0e7ff;
+}
+
+.text-cyan {
+  color: #0284c7 !important;
+}
+
+.text-purple {
+  color: #7c3aed !important;
+}
+
+.text-amber {
+  color: #d97706 !important;
+}
+
+.text-emerald {
+  color: #059669 !important;
+}
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast-custom {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  padding: 0.9rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideInRight 0.3s ease;
+  font-weight: 500;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
