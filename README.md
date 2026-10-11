@@ -1,29 +1,47 @@
 # 🏰 AuraHostel ERP — Intelligent Hostel Operations & Student Living Management
 
-> **Enterprise-Grade Full-Stack Hostel Management System**
+> **Enterprise-Grade Full-Stack Hostel Management System**  
 > Synthesizing all **10 Engineering Laboratory Experiments** into one cohesive, runnable production-ready web application.
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/lavanyamahesh675-collab/aura-hostel)
+[![Live Demo](https://img.shields.io/badge/Live_Public_Demo-Active-success?logo=googlechrome)](https://five-tigers-help.loca.lt)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-green?logo=node.js)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+---
+
+### 🌐 Live Application Links
+
+* **Official GitHub Repository:**  
+  👉 **[https://github.com/lavanyamahesh675-collab/aura-hostel](https://github.com/lavanyamahesh675-collab/aura-hostel)**
+
+* **Live Public URL (Accessible Anywhere / Mobile):**  
+  👉 **[https://five-tigers-help.loca.lt](https://five-tigers-help.loca.lt)**  
+  *(Tunnel Verification Password / IP: **`43.252.204.161`**)*
+
+* **Local Running Instance:**  
+  👉 **[http://localhost:3000](http://localhost:3000)**  
+  *(Login Portal: [http://localhost:3000/login](http://localhost:3000/login))*
 
 ---
 
 ## 📋 Table of Contents
-1. [Project Overview](#-project-overview)
-2. [Engineering Experiments Synthesis](#-engineering-experiments-synthesis)
-3. [Technology Stack](#-technology-stack)
-4. [Complete Directory Structure](#-complete-directory-structure)
-5. [Prerequisites & System Requirements](#-prerequisites--system-requirements)
-6. [Step-by-Step Installation & Launch Guide](#-step-by-step-installation--launch-guide)
+1. [Live Application Links](#-live-application-links)
+2. [Project Overview](#-project-overview)
+3. [Role-Based Access Control (RBAC)](#-role-based-access-control-rbac)
+4. [Engineering Experiments Synthesis](#-engineering-experiments-synthesis)
+5. [Technology Stack](#-technology-stack)
+6. [Cloud Deployment (Vercel / Render)](#-cloud-deployment-vercel--render)
 7. [Environment Configuration (.env)](#-environment-configuration-env)
-8. [Database Seeding & Pre-seeded Accounts](#-database-seeding--pre-seeded-accounts)
+8. [Database Seeding & Demo Accounts](#-database-seeding--pre-seeded-accounts)
 9. [REST API Documentation](#-rest-api-documentation)
 10. [XML, DTD & XSD Policy Inspector](#-xml-dtd--xsd-policy-inspector)
-11. [Testing & Quality Assurance](#-testing--quality-assurance)
-12. [Troubleshooting & Diagnostics](#-troubleshooting--diagnostics)
 
 ---
 
 ## 🌟 Project Overview
 
-**AuraHostel ERP** is an enterprise-level, production-oriented Hostel Management Platform designed for universities, engineering campuses, and residential institutions. It provides a visual dashboard, intelligent room allocation, student roster CRUD operations, payment tracking, complaint ticketing, attendance entry logging, visitor management, XML policy schema validation, and real-time Node.js OS & EventEmitter system telemetry.
+**AuraHostel ERP** is an enterprise-level, production-oriented Hostel Management Platform designed for universities, engineering campuses, and residential institutions. It provides a visual dashboard, intelligent room allocation, student living self-service, complaint ticketing, payment processing, XML/DTD/XSD policy schema validation, and real-time Node.js OS & EventEmitter system telemetry.
 
 ---
 
