@@ -31,6 +31,14 @@ const defaultUsers = [
     username: 'alex',
     password: 'student123',
     role: 'Student',
+    studentId: 'STU-1001',
+    roomNo: 'A-101',
+    block: 'Block A',
+    department: 'Computer Science',
+    academicYear: '3rd Year',
+    feeStatus: 'Paid',
+    dietPreference: 'Vegetarian',
+    phone: '9876543210',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
   }
 ];
@@ -116,7 +124,11 @@ router.post('/login', async (req, res) => {
         isMatch = await user.comparePassword(password);
       }
     } else {
-      user = memoryStore.users.find(u => u.email.toLowerCase() === email.toLowerCase() || u.username === email.toLowerCase());
+      user = memoryStore.users.find(u => 
+        u.email.toLowerCase() === email.toLowerCase() || 
+        u.username.toLowerCase() === email.toLowerCase() ||
+        (u.email === 'alex@aurahostel.com' && email.toLowerCase() === 'alex.j@aurahostel.com')
+      );
       if (user && user.password === password) {
         isMatch = true;
       }
@@ -131,6 +143,13 @@ router.post('/login', async (req, res) => {
       name: user.name,
       email: user.email,
       role: user.role,
+      studentId: user.studentId || (user.role === 'Student' ? 'STU-1001' : null),
+      roomNo: user.roomNo || (user.role === 'Student' ? 'A-101' : null),
+      block: user.block || (user.role === 'Student' ? 'Block A' : null),
+      department: user.department || (user.role === 'Student' ? 'Computer Science' : null),
+      academicYear: user.academicYear || (user.role === 'Student' ? '3rd Year' : null),
+      feeStatus: user.feeStatus || (user.role === 'Student' ? 'Paid' : null),
+      dietPreference: user.dietPreference || (user.role === 'Student' ? 'Vegetarian' : null),
       avatar: user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
       loginTime: new Date().toISOString()
     };

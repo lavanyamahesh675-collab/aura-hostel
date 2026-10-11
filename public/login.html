@@ -47,10 +47,22 @@
         <i class="fa-solid fa-right-to-bracket me-2"></i>Sign In to Dashboard
       </button>
 
-      <div class="p-3 bg-light rounded-3 text-center small text-muted">
-        <div><strong>Quick Demo Account:</strong></div>
-        <div>Chief Warden: warden@aurahostel.com</div>
-        <div>Password: admin123</div>
+      <div class="mb-3">
+        <label class="form-label small text-muted mb-2">Select Account Role:</label>
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-outline-primary text-start p-2.5 d-flex justify-content-between align-items-center" onclick="document.getElementById('loginEmail').value='warden@aurahostel.com'; document.getElementById('loginPassword').value='admin123';">
+            <span><i class="fa-solid fa-user-shield me-2 text-primary"></i>Chief Warden</span>
+            <span class="badge bg-primary-subtle text-primary">Warden</span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary text-start p-2.5 d-flex justify-content-between align-items-center" onclick="document.getElementById('loginEmail').value='admin@aurahostel.com'; document.getElementById('loginPassword').value='admin123';">
+            <span><i class="fa-solid fa-user-gear me-2 text-secondary"></i>Campus Administrator</span>
+            <span class="badge bg-secondary-subtle text-secondary">Admin</span>
+          </button>
+          <button type="button" class="btn btn-outline-success text-start p-2.5 d-flex justify-content-between align-items-center" onclick="document.getElementById('loginEmail').value='alex@aurahostel.com'; document.getElementById('loginPassword').value='student123';">
+            <span><i class="fa-solid fa-user-graduate me-2 text-success"></i>Resident Student (Room A-101)</span>
+            <span class="badge bg-success-subtle text-success">Student</span>
+          </button>
+        </div>
       </div>
     </form>
   </div>

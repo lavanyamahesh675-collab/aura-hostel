@@ -55,7 +55,56 @@ class SchemaValidationService {
       }
     });
 
+    const emergencyMatch = xmlContent.match(/<emergencyContact>(.*?)<\/emergencyContact>/);
+    const lateEntryMatch = xmlContent.match(/<lateEntryPermitRequired>(.*?)<\/lateEntryPermitRequired>/);
+
+    // Extract weekly menu days
+    const daysMatch = [...xmlContent.matchAll(/<day name="(.*?)">[\s\S]*?<breakfast>(.*?)<\/breakfast>[\s\S]*?<lunch>(.*?)<\/lunch>[\s\S]*?<dinner>(.*?)<\/dinner>[\s\S]*?<\/day>/g)];
+    const weeklyMenu = daysMatch.map(d => ({
+      day: d[1],
+      breakfast: d[2],
+      lunch: d[3],
+      dinner: d[4]
+    }));
+
+    // Extract meal timings
+    const timingsMatch = [...xmlContent.matchAll(/<mealTiming meal="(.*?)">(.*?)<\/mealTiming>/g)];
+    const mealTimings = timingsMatch.map(t => ({
+      meal: t[1],
+      timing: t[2]
+    }));
+
+    // Extract room classifications
+    const categories = [];
+    const catBlocks = [...xmlContent.matchAll(/<category type="(.*?)">[\s\S]*?<capacity>(.*?)<\/capacity>[\s\S]*?<monthlyFee>(.*?)<\/monthlyFee>[\s\S]*?<amenities>(.*?)<\/amenities>[\s\S]*?<\/category>/g)];
+    catBlocks.forEach(c => {
+      categories.push({
+        type: c[1],
+        capacity: parseInt(c[2]),
+        monthlyFee: parseInt(c[3]),
+        amenities: c[4]
+      });
+    });
+
     const isValid = errors.length === 0;
+
+    const summary = {
+      curfewPolicy: {
+        inTime: inTimeMatch ? inTimeMatch[1] : '21:30',
+        outTime: outTimeMatch ? outTimeMatch[1] : '06:00',
+        lateEntryPermitRequired: lateEntryMatch ? lateEntryMatch[1] === 'true' : true,
+        emergencyContact: emergencyMatch ? emergencyMatch[1] : '+91-98765-00000',
+        finePerLateHour: fineMatch ? parseInt(fineMatch[1]) : 100
+      },
+      roomCategories: categories,
+      mealTimings: mealTimings.length > 0 ? mealTimings : [
+        { meal: 'Breakfast', timing: '07:30 - 09:30' },
+        { meal: 'Lunch', timing: '12:30 - 14:30' },
+        { meal: 'Snacks', timing: '17:00 - 18:00' },
+        { meal: 'Dinner', timing: '19:30 - 21:30' }
+      ],
+      weeklyMenu: weeklyMenu
+    };
 
     return {
       success: true,
@@ -67,13 +116,10 @@ class SchemaValidationService {
         dtd: path.basename(dtdPath),
         xsd: path.basename(xsdPath)
       },
+      summary,
       parsedRules: {
-        curfew: {
-          inTime: inTimeMatch ? inTimeMatch[1] : '21:30',
-          outTime: outTimeMatch ? outTimeMatch[1] : '06:00',
-          finePerLateHour: fineMatch ? fineMatch[1] : '100'
-        },
-        categoryCount: categoryMatches.length
+        curfew: summary.curfewPolicy,
+        categoryCount: categories.length
       },
       rawContent: {
         xml: xmlContent,
